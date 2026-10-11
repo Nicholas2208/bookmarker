@@ -6,7 +6,7 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 public class BookmarksDTO {
-    private List<Bookmark> data;
+    private List<BookmarkDTO> data;
     private long totalElements;
     private int totalPages;
     private int currentPage;
@@ -17,11 +17,11 @@ public class BookmarksDTO {
     private boolean hasNext;
     private boolean hasPrevious;
 
-    public List<Bookmark> getData() {
+    public List<BookmarkDTO> getData() {
         return data;
     }
 
-    public void setData(List<Bookmark> data) {
+    public void setData(List<BookmarkDTO> data) {
         this.data = data;
     }
 
@@ -81,7 +81,7 @@ public class BookmarksDTO {
         this.hasPrevious = hasPrevious;
     }
 
-    public BookmarksDTO(Page<Bookmark> bookmarkPage) {
+    public BookmarksDTO(Page<BookmarkDTO> bookmarkPage) {
         this.setData(bookmarkPage.getContent());
         this.setTotalElements(bookmarkPage.getTotalElements());
         this.setTotalPages(bookmarkPage.getTotalPages());
