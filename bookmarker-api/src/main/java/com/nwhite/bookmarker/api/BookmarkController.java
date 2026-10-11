@@ -1,7 +1,7 @@
 package com.nwhite.bookmarker.api;
 
-import com.nwhite.bookmarker.domain.Bookmark;
 import com.nwhite.bookmarker.domain.BookmarkService;
+import com.nwhite.bookmarker.domain.BookmarksDTO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,7 +19,7 @@ public class BookmarkController {
     }
 
     @GetMapping
-    public List<Bookmark> getBookmarks(@RequestParam(defaultValue = "1") Integer page) {
+    public BookmarksDTO getBookmarks(@RequestParam(defaultValue = "1") Integer page) {
         return bookmarkService.getBookmarks(page);
     }
 }
